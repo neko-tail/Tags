@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册</title>
+    <link rel="stylesheet" href="css/semantic.min.css">
+    <link rel="stylesheet" href="css/m.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- 
+
+     -->
+
+    <!-- 这里是导航栏 -->
+    <div class="ui top fixed secondary pointing teal massive menu m-bg-normal m-height-small m-fixed" id="p-header">
+        <div class="ui container">
+            <a href="../index" class="item">
+                Tags
+            </a>
+            <a href="../show" class="item">
+                首页
+            </a>
+            <a href="./index" class="item active">
+                个人
+            </a>
+            <a href="#" class="item">
+                统计
+            </a>
+            <!-- 电脑端搜索框 -->
+            <div class="ui right basic secondary teal massive menu m-bg-normal m-height-small">
+                <div class="ui item m-mobile-hidden">
+                    <div class="ui icon input p-search-input">
+                        <input type="text" placeholder="搜索...">
+                        <i class="search link icon"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- 手机端搜索按钮 -->
+            <div class="ui item m-mobile-show  m-computer-hidden">
+                <a href="#" class="p-mobile-search_btn">
+                    <i class="search link icon"></i>
+                </a>
+            </div>
+        </div>
+        <!-- 手机端搜索框 -->
+        <div class="ui teal segment m-fixed m-top-margin p-mobile-search m-hidden">
+            <div class="ui fluid container">
+                <div class="ui fluid icon input">
+                    <input type="text" placeholder="搜索...">
+                    <i class="search link icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 这里是主要区域 -->
+    <div class="ui text container m-mobile-full m-vertical-full">
+        <div class="ui raised teal segment fluid container m-top-margin-large m-mobile-full" id="p-content">
+            <div class="ui header m-text-big">
+                注册
+            </div>
+            <div class="ui divider"></div>
+            <form class="ui form">
+                <div class="field">
+                    <label>账号：</label>
+                    <input type="text" name="p-user-name" placeholder="">
+                </div>
+                <div class="field">
+                    <label>密码：</label>
+                    <input type="password" name="p-pwd" placeholder="">
+                </div>
+                <div class="field">
+                    <label>确认密码：</label>
+                    <input type="password" name="p-check-pwd" placeholder="">
+                </div>
+                <div class="field">
+                    <label>昵称：</label>
+                    <input type="text" name="p-nickname" placeholder="">
+                </div>
+                <div class="field">
+                    <label>邮箱：</label>
+                    <input type="text" name="p-email" placeholder="">
+                </div>
+                <!-- <div class="field">
+                    <label>验证码：</label>
+                    <input type="text" name="p-check-email" placeholder="">
+                </div> -->
+                <button class="ui teal button" type="submit">确定</button>
+                <button class="ui button" type="reset">重置</button>
+                <div class="ui error message"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 这是footer部分 -->
+    <div class="ui inverted basic segment m-padding">
+        <!-- 容器 -->
+        <div class="ui container">
+            <!-- 网格布局 -->
+            <div class="ui inverted three column divided centered relaxed grid">
+                <!-- 第一列 -->
+                <div class="five wide center aligned column">
+                    <div class="ui m-text-big">
+                        Look me
+                    </div>
+                </div>
+                <!-- 第二列 -->
+                <div class="five wide center aligned column">
+                    <div class="ui m-text-big">
+                        This is
+                    </div>
+                </div>
+                <!-- 第三列 -->
+                <div class="five wide center aligned column">
+                    <div class="ui m-text-big">
+                        Void page
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/semantic.min.js"></script>
+    <script src="js/page.js"></script>
+    <script>
+        $('.ui.form').form({
+            fields: {
+                name: {
+                    identifier: 'p-user-name',
+                    rules: [{
+                            type: 'empty',
+                            prompt: '用户名不能为空',
+                        },
+                        {
+                            type: 'regExp',
+                            value: /^[a-zA-Z0-9_-]{3,16}$/,
+                            prompt: '用户名可为数字、字母、符号(_-)，长度限制3-16位',
+                        },
+                    ]
+                },
+                pwd: {
+                    identifier: 'p-pwd',
+                    rules: [{
+                            type: 'empty',
+                            prompt: '密码不能为空',
+                        },
+                        {
+                            type: 'regExp',
+                            value: /^(?=.*[a-zA-Z0-9].*)(?=.*[a-zA-Z_-].*)(?=.*[0-9_-].*).{3,16}$/,
+                            prompt: '数字、字母、符号(_-)至少两种，长度限制3-16位',
+                        },
+                    ]
+                },
+                check_pwd: {
+                    identifier: 'p-check-pwd',
+                    rules: [{
+                        type: 'match[pwd]',
+                        prompt: '两次密码需要一致',
+                    }, ]
+                },
+                nickname: {
+                    identifier: 'p-nickname',
+                    rules: [{
+                            type: 'empty',
+                            prompt: '昵称不能为空',
+                        },
+                        {
+                            type: 'regExp',
+                            value: /^[a-zA-Z0-9\u4e00-\u9fa5_-]{3,16}$/,
+                            prompt: '昵称可为数字、字母、符号(_-)、中文，长度限制3-16位',
+                        },
+                    ]
+                },
+                email: {
+                    identifier: 'p-email',
+                    rules: [{
+                            type: 'empty',
+                            prompt: '邮箱不能为空',
+                        },
+                        {
+                            type: 'email',
+                            prompt: '邮箱格式错误',
+                        },
+                    ]
+                },
+            }
+        })
+    </script>
+</body>
+
+</html>

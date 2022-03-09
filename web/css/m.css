@@ -1,0 +1,205 @@
+/* 就这样写 */
+/* 写个导航栏 */
+.m-nav {
+    height: 60px;
+    background-color: white;
+    color: black;
+}
+
+.m-nav .active.item {
+    color: white !important;
+    background-color: #33c4bd !important;
+}
+
+
+/* 那个圆 */
+.m-circular {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    background-color: #33c4bd;
+    text-align: center;
+    line-height: 200px;
+    font-size: 550%;
+    font-weight: bolder;
+    color: #fff;
+}
+
+/* 那个按钮 */
+.m-button {
+    width: 130px;
+    height: 30px;
+    background-color: #1b1f2a;
+    color: white;
+    border: 0px;
+    border-radius: 4px;
+    font-weight: normal;
+    font-size: large;
+}
+
+.m-button:hover {
+    background-color: #fff;
+    color: black;
+}
+
+/* 上下全屏 */
+.m-vertical-full {
+    height: 100%;
+}
+
+/* 字体颜色 */
+.m-action {
+    color: #33c4bd !important;
+}
+
+.m-bg-action {
+    background-color: #33c4bd !important;
+}
+
+.m-disable {
+    color: #b1b0b0 !important;
+}
+
+.m-bg-disable {
+    background-color: #b1b0b0 !important;
+}
+
+.m-agree {
+    color: #4dd900 !important;
+}
+
+.m-disagree {
+    color: #e04340 !important;
+}
+
+.m-normal {
+    color: #000 !important;
+}
+
+.m-inverted {
+    color: #fff !important;
+}
+
+
+
+/* 字体段落缩进 */
+.m-paragraph-indent {
+    text-indent: 2rem !important;
+}
+
+/* 背景颜色 */
+.m-bg-normal {
+    background-color: #fff !important;
+}
+
+/* 边距 */
+.m-top-margin {
+    margin-top: 60px !important;
+}
+
+
+.m-top-margin-large {
+    margin-top: 80px !important;
+}
+
+.m-top-margin-big {
+    margin-top: 200px !important;
+}
+
+.m-top-margin-mini {
+    margin-top: 10px !important;
+}
+
+.m-top-margin-tiny {
+    margin-top: 25px !important;
+}
+
+/* 左右边距 */
+.m-horizontal-margin-large {
+    margin-left: 200px !important;
+    margin-right: 200px !important;
+}
+
+.m-horizontal-margin-mini {
+    margin-left: 14px !important;
+    margin-right: 14px !important;
+}
+
+/* 内填充 */
+.m-padding {
+    padding: 40px !important;
+}
+
+/* 最小高度 */
+.m-height-small {
+    min-height: 60px !important;
+}
+
+.m-height-big {
+    min-height: 400px !important;
+}
+
+.m-height-large {
+    min-height: 200px !important;
+}
+
+.m-height {
+    min-height: 100px !important;
+}
+
+/* 透明 */
+.m-opacity {
+    opacity: .8 !important;
+}
+
+/* 隐藏 */
+.m-hidden {
+    display: none !important;
+}
+
+/* 文字设置 */
+.m-text-big {
+    font-size: xx-large !important;
+    font-weight: bolder !important;
+}
+
+.m-text-large {
+    font-size: x-large !important;
+    font-weight: bolder !important;
+}
+
+/* 边框设置 */
+.m-border {
+    border-width: 3px !important;
+}
+
+/* 固定定位 */
+.m-fixed {
+    position: fixed !important;
+    z-index: 999;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+}
+
+/* 阴影 */
+.m-raised {
+    box-shadow: 0 2px 4px 0 rgb(34 36 38 / 12%), 0 2px 10px 0 rgb(34 36 38 / 15%) !important;
+}
+
+/* 背景图片 */
+.m-bg-img {
+    background-position: 0 0 !important;
+    background-size: 100% auto !important;
+    background-repeat: no-repeat !important;
+}
+
+/* 圆角 */
+.m-no-radius {
+    border-radius: 0 0 0 0 !important;
+}
+
+/* 消除浮动 */
+.m-clear-both {
+    clear: both;
+}

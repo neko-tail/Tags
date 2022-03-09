@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>详情页</title>
+    <link rel="stylesheet" href="css/semantic.min.css">
+    <link rel="stylesheet" href="css/m.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- 
+        顶部信息栏
+        .p-content-msg
+
+
+        项目图片
+        .p-pro-img
+        项目名字
+        .p-pro-name
+        项目描述
+        .p-pro-description
+
+        项目标签数
+        .p-pro-tag_count
+        项目关注人数
+        .p-pro-watch_count
+        项目收藏人数
+        .p-pro-star_count
+        项目评论人数
+        .p-pro-comment_count
+
+        添加标签
+        .p-add-tag
+        搜索标签
+        .p-tag-search
+        控制区
+        。p-add-tag-control
+
+
+        评论弹出层
+        .p-comment-modal
+        评论类型
+        .p-comment-type
+        评论提交
+        .p-comment-submit
+
+        标签主人
+        .p-tag-master
+        标签评论
+        .p-tag-comments
+        赞同
+        .p-agree
+        反对
+        .p-disagree
+     -->
+
+    <!-- 这里是导航栏 -->
+    <div class="ui top fixed secondary pointing teal massive menu m-bg-normal m-height-small m-fixed" id="p-header">
+        <div class="ui container">
+            <a href="./index" class="item">
+                Tags
+            </a>
+            <a href="./show" class="item active">
+                首页
+            </a>
+            <a href="./admin/index" class="item">
+                个人
+            </a>
+            <a href="#" class="item">
+                统计
+            </a>
+            <!-- 电脑端搜索框 -->
+            <div class="ui right basic secondary teal massive menu m-bg-normal m-height-small">
+                <div class="ui item m-mobile-hidden">
+                    <div class="ui icon input p-search-input">
+                        <input type="text" placeholder="搜索...">
+                        <i class="search link icon"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- 手机端搜索按钮 -->
+            <div class="ui item m-mobile-show  m-computer-hidden">
+                <a href="#" class="p-mobile-search_btn">
+                    <i class="search link icon"></i>
+                </a>
+            </div>
+        </div>
+        <!-- 手机端搜索框 -->
+        <div class="ui teal segment m-fixed m-top-margin p-mobile-search m-hidden">
+            <div class="ui fluid container">
+                <div class="ui fluid icon input">
+                    <input type="text" placeholder="搜索...">
+                    <i class="search link icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 这里是主要区域 -->
+    <div class="m-horizontal-margin-large m-mobile-full">
+        <div class="ui raised teal segment fluid container m-top-margin-large" id="p-content">
+            <!-- 这是内容区顶部 -->
+            <div class="ui teal basic message" id="p-content-msg">
+                <div class="header">
+                    Title
+                </div>
+            </div>
+            <div class="ui grid">
+                <!-- 项目详情 -->
+                <div class="ui stackable row">
+                    <div class="four wide column p-pro-img">
+                        <a href="./project" class="ui rounded bordered image">
+                            <img src="img/首页背景.png" alt="">
+                        </a>
+                    </div>
+                    <div class="eight wide column">
+                        <div class="ui header m-text-big p-pro-name">
+                            The project name
+                        </div>
+                        <div class="ui description m-paragraph-indent p-pro-description">
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                            Aenean massa strong. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+                            ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla
+                            consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget,
+                            arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu
+                            pede link mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.
+                            Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend
+                            ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra
+                            nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel
+                            augue. Curabitur ullamcorper ultricies nisi.
+                        </div>
+                    </div>
+                    <div class="ui four wide column grid">
+                        <div class="ui row">
+                            <!-- 项目标签数 -->
+                            <div class="four wide tablet center aligned column p-pro-statistic">
+                                <a href="#">
+                                    <i class="ui large teal tag icon"></i><br>
+                                    <span class="m-normal p-pro-tag_count">1222</span>
+                                </a>
+                            </div>
+                            <!-- 项目关注人数 -->
+                            <div class="four wide center aligned column p-pro-statistic">
+                                <a href="#">
+                                    <i class="ui large teal eye icon"></i><br>
+                                    <span class="m-normal p-pro-watch_count">12</span>
+                                </a>
+                            </div>
+                            <!-- 项目收藏人数 -->
+                            <div class="four wide center aligned column p-pro-statistic">
+                                <a href="#">
+                                    <i class="ui large teal star icon"></i><br>
+                                    <span class="m-normal p-pro-star_count">12</span>
+                                </a>
+                            </div>
+                            <!-- 项目评论人数 -->
+                            <div class="four wide center aligned column p-pro-statistic">
+                                <a href="./project">
+                                    <i class="ui large teal comment icon"></i><br>
+                                    <span class="m-normal p-pro-comment_count">12222</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 标签 -->
+                <div class="ui row">
+                    <div class="column">
+                        <div class="ui mini teal labels p-pro-tag_list">
+                            <a href="#" class="ui label"><span class="p-pro-tag">标签</span></a>
+                            <a href="#" class="ui label"><span class="p-pro-tag">标签1</span></a>
+                            <a href="#" class="ui label"><span class="p-pro-tag">标签12</span></a>
+                            <a href="#" class="ui label"><span class="p-pro-tag">标签123</span></a>
+                            <a href="#" class="ui label"><span class="p-pro-tag">标签1234</span></a>
+                            <a href="#" class="ui label"><span class="p-pro-tag">标签12345</span></a>
+                            <a href="#" class="ui label"><span class="p-pro-tag">标签123456</span></a>
+                            <a href="#" class="ui label"><span class="p-pro-tag">标签1234567</span></a>
+                            <a href="#" class="ui label"><span class="p-pro-tag">标签12345678</span></a>
+                            <a href="#" class="ui label"><span class="p-pro-tag">标签123456789</span></a>
+                            <a href="#" class="ui label"><span class="p-pro-tag">标签1234567890</span></a>
+                        </div>
+                        <!-- 弹出模态框 -->
+                        <a href="#" class="ui label p-add-tag"><span>添加标签+</span></a>
+                        <!-- 模态框 -->
+                        <div class="ui small modal p-add-tag m-height-big">
+                            <!-- 标题 -->
+                            <div class="header">
+                                <span>添加标签</span><a class="m-disable p-modal-close" style="float: right;"><i
+                                        class="ui close icon"></i></a>
+                            </div>
+                            <!-- 内容 -->
+                            <div class="ui container grid m-padding">
+                                <div class="ui row">
+                                    <!-- 搜索 -->
+                                    <div class="ui search p-tag-search">
+                                        <div class="ui icon input">
+                                        <input class=" prompt" type="text" placeholder="搜索标签……">
+                                            <i class="search icon"></i>
+                                        </div>
+                                        <div class="results">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ui row">
+                                    <textarea name="" id="" cols="50" rows="10"></textarea>
+                                </div>
+                                <!-- 控制按钮 -->
+                                <div class="ui centered row p-add-tag-control">
+                                    <div class="six wide center aligned column">
+                                        <button class="ui large button m-bg-action">确定</button>
+                                    </div>
+                                    <div class="six wide center aligned column">
+                                        <button class="ui large button m-bg-disable">取消</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 评论 -->
+                <div class="ui row">
+                    <div class="column">
+                        <!-- 添加标签者 -->
+                        <div class="ui comments p-tag-master">
+                            <h3 class="ui dividing header m-action">标签</h3>
+                            <div class="comment">
+                                <a class="avatar">
+                                    <img src="img/smart.jpg">
+                                </a>
+                                <div class="content">
+                                    <a class="author">master</a>
+                                    <div class="metadata">
+                                        <span class="date">1月16日 5:42</span>
+                                    </div>
+                                    <div class="text">
+                                        <div class="m-action">
+                                            > 添加
+                                        </div>
+                                        我感觉这个标签很合适
+                                    </div>
+                                    <div class="actions">
+                                        <a class="p-agree">赞同</a>
+                                        <a class="p-disagree">反对</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 评论标签者 -->
+                        <div class="ui comments p-tag-comments">
+                            <h3 class="ui dividing header">
+                                <a href="#" class="m-action p-all">ALL</a>
+                                &ensp;|&ensp;
+                                <a href="#" class="m-disable p-agree">赞同</a>
+                                &ensp;|&ensp;
+                                <a href="#" class="m-disable p-disagree">反对</a>
+                            </h3>
+                            <div class="comment p-agree">
+                                <a class="avatar">
+                                    <img src="img/smart.jpg">
+                                </a>
+                                <div class="content">
+                                    <a class="author">someone</a>
+                                    <div class="metadata">
+                                        <span class="date">1月15日 12:30</span>
+                                    </div>
+                                    <div class="text">
+                                        <div class="m-action m-agree">
+                                            > 赞同
+                                        </div>
+                                        <p>对对对</p>
+                                    </div>
+                                    <div class="actions">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="comment p-disagree">
+                                <a class="avatar">
+                                    <img src="img/smart.jpg">
+                                </a>
+                                <div class="content">
+                                    <a class="author">another one</a>
+                                    <div class="metadata">
+                                        <span class="date">5 天以前</span>
+                                    </div>
+                                    <div class="text">
+                                        <div class="m-action m-disagree">
+                                            > 不赞同
+                                        </div>
+                                        很难不赞同
+                                    </div>
+                                    <div class="actions">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ui modal p-comment-reply">
+                                <div class="header">
+                                    <span>评论</span><a class="m-disable p-modal-close" style="float: right;"><i
+                                            class="ui close icon"></i></a>
+                                </div>
+                                <div class="ui container m-padding">
+                                    <form class="ui reply form">
+                                        <div class="field">
+                                            <input type="hidden" class="p-comment-type" value="1">
+                                        </div>
+                                        <div class="field">
+                                            <textarea></textarea>
+                                        </div>
+                                        <div class="ui blue labeled submit icon button p-comment-submit">
+                                            <i class="icon edit"></i> Add Reply
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 这是footer部分 -->
+    <div class="ui inverted basic segment m-padding m-top-margin-big">
+        <!-- 容器 -->
+        <div class="ui container">
+            <!-- 网格布局 -->
+            <div class="ui inverted three column divided centered relaxed grid">
+                <!-- 第一列 -->
+                <div class="five wide center aligned column">
+                    <div class="ui m-text-big">
+                        Look me
+                    </div>
+                </div>
+                <!-- 第二列 -->
+                <div class="five wide center aligned column">
+                    <div class="ui m-text-big">
+                        This is
+                    </div>
+                </div>
+                <!-- 第三列 -->
+                <div class="five wide center aligned column">
+                    <div class="ui m-text-big">
+                        Void page
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/semantic.min.js"></script>
+    <script src="js/page.js"></script>
+    <script>
+        // 添加标签
+        // 打开模态框
+        $(".p-add-tag.label").click(function () {
+            $(".ui.modal.p-add-tag").modal('setting', 'closable', false).modal("show");
+            return false;
+        })
+        // 标签
+        var tag_search_content = [{
+                title: "th01"
+            },
+            {
+                title: "th02"
+            },
+            {
+                title: "no.03"
+            },
+            {
+                title: "no.04"
+            },
+        ];
+        $(".p-tag-search").search({
+            source: tag_search_content,
+        });
+        // 提交信息
+        $(".p-add-tag-control .m-bg-action.button").click(function () {
+            $(".ui.modal.p-add-tag").modal("hide");
+        })
+        //取消
+        $(".p-add-tag-control .m-bg-disable.button").click(function () {
+            $(".ui.modal.p-add-tag").modal("hide");
+        })
+
+        // 关闭模态框（两个通用）
+        $(".p-modal-close").click(function () {
+            $(".ui.modal").modal("hide");
+        })
+
+        // 评论操作
+        // 赞同
+        $(".p-tag-master .actions .p-agree").click(function () {
+            $(".ui.modal.p-comment-reply>.header>span").text("赞同");
+            $(".ui.modal.p-comment-reply .p-comment-type").val(1);
+            $(".ui.modal.p-comment-reply").modal('setting', 'closable', false).modal("show");
+        })
+        // 反对
+        $(".p-tag-master .actions .p-disagree").click(function () {
+            $(".ui.modal.p-comment-reply>.header>span").text("反对");
+            $(".ui.modal.p-comment-reply .p-comment-type").val(0);
+            $(".ui.modal.p-comment-reply").modal('setting', 'closable', false).modal("show");
+        })
+
+        // 评论提交
+        $(".p-comment-submit").click(function () {
+            $(".ui.modal.p-comment-reply").modal("hide");
+        })
+
+
+        // 查看评论
+        // 全部查看
+        $(".p-tag-comments>.header>.p-all").click(function () {
+            $(this).parent().children().addClass("m-disable").removeClass("m-action");
+            $(this).addClass("m-action").removeClass("m-disable");
+            $(".p-tag-comments .comment.p-agree").removeClass("m-hidden")
+            $(".p-tag-comments .comment.p-disagree").removeClass("m-hidden")
+            return false;
+        })
+        // 查看赞同
+        $(".p-tag-comments>.header>.p-agree").click(function () {
+            $(this).parent().children().addClass("m-disable").removeClass("m-action");
+            $(this).addClass("m-action").removeClass("m-disable");
+            $(".p-tag-comments .comment.p-agree").removeClass("m-hidden")
+            $(".p-tag-comments .comment.p-disagree").addClass("m-hidden")
+            return false;
+        })
+        // 查看反对
+        $(".p-tag-comments>.header>.p-disagree").click(function () {
+            $(this).parent().children().addClass("m-disable").removeClass("m-action");
+            $(this).addClass("m-action").removeClass("m-disable");
+            $(".p-tag-comments .comment.p-agree").addClass("m-hidden")
+            $(".p-tag-comments .comment.p-disagree").removeClass("m-hidden")
+            return false;
+        })
+    </script>
+</body>
+
+</html>

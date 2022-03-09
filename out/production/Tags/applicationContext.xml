@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<beans>
+    <!--DAO-->
+    <bean id="adminDAO" class="com.master.tags.dao.impl.AdminDAOImpl"/>
+    <bean id="adminPowerDAO" class="com.master.tags.dao.impl.AdminPowerDAOImpl"/>
+    <bean id="commentDAO" class="com.master.tags.dao.impl.CommentDAOImpl"/>
+    <bean id="favoriteDAO" class="com.master.tags.dao.impl.FavoriteDAOImpl"/>
+    <bean id="projectDAO" class="com.master.tags.dao.impl.ProjectDAOImpl"/>
+    <bean id="tagDAO" class="com.master.tags.dao.impl.TagDAOImpl"/>
+    <bean id="taggingDAO" class="com.master.tags.dao.impl.TaggingDAOImpl"/>
+    <bean id="userDAO" class="com.master.tags.dao.impl.UserDAOImpl"/>
+    <bean id="userDetailDAO" class="com.master.tags.dao.impl.UserDetailDAOImpl"/>
+    <!--Controller-->
+    <bean id="page" class="com.master.tags.controller.PageController"/>
+</beans>

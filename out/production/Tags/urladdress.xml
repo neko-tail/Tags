@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<beans>
+    <!--pageController-->
+    <bean url="" class="page" func="index" />
+    <bean url="/index" class="page" func="index" />
+    <bean url="/project" class="page" func="project" />
+    <bean url="/search" class="page" func="search" />
+    <bean url="/show" class="page" func="show" />
+    <bean url="/tag" class="page" func="tag" />
+    <!--adminController-->
+    <bean url="admin/dynamic" class="admin" func="dynamic" />
+    <bean url="admin/index" class="admin" func="index" />
+    <bean url="admin/login" class="admin" func="login" />
+    <bean url="admin/project" class="admin" func="project" />
+    <bean url="admin/register" class="admin" func="register" />
+    <bean url="admin/search" class="admin" func="search" />
+    <bean url="admin/star" class="admin" func="star" />
+    <bean url="admin/type" class="admin" func="type" />
+    <bean url="admin/up" class="admin" func="up" />
+    <!--errorController-->
+    <bean url="/404" class="error" func="err_404" />
+    <bean url="/500" class="error" func="err_500" />
+    <bean url="/error" class="error" func="err_error" />
+
+
+    
+</beans>

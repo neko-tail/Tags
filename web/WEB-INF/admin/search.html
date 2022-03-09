@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>搜索结果</title>
+    <link rel="stylesheet" href="css/semantic.min.css">
+    <link rel="stylesheet" href="css/m.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- 这是个模板，其他页面只要往p-content里面填内容就好了 -->
+    <!-- 
+        banner背景图
+        .p-user-bg_img
+        用户头像
+        .p-user-avater
+        用户昵称
+        .p-user-name
+        用户简介
+        .p-user-descript
+        用户关注数
+        p-user-post_count
+        用户收藏数
+        p-user-post_count
+        用户投稿数
+        p-user-post_count
+     -->
+
+    <!-- 这里是导航栏 -->
+    <div class="ui top fixed secondary pointing teal massive menu m-bg-normal m-height-small m-fixed" id="p-header">
+        <div class="ui container">
+            <a href="../index" class="item">
+                Tags
+            </a>
+            <a href="../show" class="item">
+                首页
+            </a>
+            <a href="./index" class="item active">
+                个人
+            </a>
+            <a href="#" class="item">
+                统计
+            </a>
+            <!-- 电脑端搜索框 -->
+            <div class="ui right basic secondary teal massive menu m-bg-normal m-height-small">
+                <div class="ui item m-mobile-hidden">
+                    <div class="ui icon input p-search-input">
+                        <input type="text" placeholder="搜索...">
+                        <i class="search link icon"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- 手机端搜索按钮 -->
+            <div class="ui item m-mobile-show  m-computer-hidden">
+                <a href="#" class="p-mobile-search_btn">
+                    <i class="search link icon"></i>
+                </a>
+            </div>
+        </div>
+        <!-- 手机端搜索框 -->
+        <div class="ui teal segment m-fixed m-top-margin p-mobile-search m-hidden">
+            <div class="ui fluid container">
+                <div class="ui fluid icon input">
+                    <input type="text" placeholder="搜索...">
+                    <i class="search link icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 这是顶部那一块 -->
+    <div class="ui container m-top-margin-large" id="p-content">
+        <!-- 这里是上方大图 -->
+        <div class="ui attached raised bottom aligned segment m-height-large m-raised m-bg-img p-user-bg_img"
+            style="border: 0px;border-radius: 20px 20px 0 0;background-image: url(img/首页背景.png);">
+            <div class="m-height m-mobile-hidden"></div>
+            <div class="ui grid">
+                <!-- 这里是用户头像 -->
+                <div class="ui sixteen wide mobile two wide computer left floated right aligned column p-user-avater">
+                    <a href="./admin/index">
+                        <img class="ui small circular centered teal bordered image m-border p-user-avatar"
+                            src="img/smart.jpg">
+                    </a>
+                </div>
+                <div class="ui sixteen wide mobile fourteen wide computer middle aligned column">
+                    <div class="m-text-large m-inverted p-user-name">
+                        MASTER
+                    </div>
+                    <div class="ui description m-inverted p-user-descript">
+                        a human, a smart human
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 这是紧贴着的导航栏 -->
+        <div class="ui bottom attached menu m-nav m-raised m-no-radius">
+            <a href="./index" class=" item">
+                主页
+            </a>
+            <a href="./dynamic" class=" item">
+                动态
+            </a>
+            <a href="./project" class=" item active">
+                投稿
+            </a>
+            <a href="./star" class=" item">
+                收藏
+            </a>
+            <a class=" item m-mobile-hidden">
+                <!-- p-user-serch 用户个人空间搜索 -->
+                <div class="ui mini search p-user-serch ">
+                    <div class="ui icon input" style="width: 90%;">
+                        <input class="prompt" type="text" placeholder="搜索投稿……">
+                        <i class="search icon"></i>
+                    </div>
+                    <div class="results">
+
+                    </div>
+                </div>
+            </a>
+            <!-- 这一块就是手机搜索栏，直接再写一个页面吧 -->
+            <a href="#" class=" item m-action m-computer-hidden">
+                &ensp;&ensp; 搜索 &ensp;<i class="ui arrow right icon"></i>
+            </a>
+            <div class="ui container grid m-mobile-hidden">
+                <div class="ui computer only row">
+                    <div class="two wide right floated middle aligned center aligned column">
+                        <div>关注数<br>
+                            <div class="p-user-watch_count">12</div>
+                        </div>
+                    </div>
+                    <div class="two wide middle aligned center aligned column">
+                        <div>收藏数<br>
+                            <div class="p-user-star_count">12</div>
+                        </div>
+                    </div>
+                    <div class="two wide middle aligned center aligned column">
+                        <div>投稿数<br>
+                            <div class="p-user-post_count">12</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 这里是主要区域 -->
+    <div class="ui container" id="p-content">
+        <!-- 这是左边 -->
+        <div class="ui left floated raised teal segment fluid container m-height-big m-top-margin-mini m-mobile-full"
+            style="width: 65%">
+            <!-- 这是内容区顶部 -->
+            <div class="ui teal basic message" id="p-content-msg">
+                <div class="header">
+                    搜索内容
+                </div>
+            </div>
+            <!-- 这是项目列表 -->
+            <div class="ui  m-opacity" id="p-content-pro_list">
+                <!-- 这是单个项目 -->
+                <div class="ui padded vertical segment p-content-pro">
+                    <div class="ui stackable grid">
+                        <!-- 左侧图片 -->
+                        <div class="six wide column p-pro-img">
+                            <a href="../project" class="ui rounded bordered image">
+                                <img src="img/首页背景.png" alt="">
+                            </a>
+                        </div>
+                        <!-- 右侧内容 -->
+                        <div class="ui stretched ten wide left aligned column grid">
+                            <!-- 顶部信息 -->
+                            <div class="ui grid">
+                                <div class="bottom aligned column">
+                                    <!-- 项目名字 -->
+                                    <a href="./project">
+                                        <div class="ui m-normal m-text-big p-pro-name">
+                                            A Project
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- 分割线 -->
+                            <div class="ui divider"></div>
+                            <!-- 标签区 -->
+                            <div class="ui container">
+                                <div class="ui mini teal labels p-pro-tag_list">
+                                    <a href="#" class="ui label"><span class="p-pro-tag">标签</span></a>
+                                    <a href="#" class="ui label"><span class="p-pro-tag">标签1</span></a>
+                                    <a href="#" class="ui label"><span class="p-pro-tag">标签12</span></a>
+                                    <a href="#" class="ui label"><span class="p-pro-tag">标签123</span></a>
+                                    <a href="#" class="ui label"><span class="p-pro-tag">标签1234</span></a>
+                                    <a href="#" class="ui label"><span class="p-pro-tag">标签12345</span></a>
+                                    <a href="#" class="ui label"><span class="p-pro-tag">标签123456</span></a>
+                                    <a href="#" class="ui label"><span class="p-pro-tag">标签1234567</span></a>
+                                    <a href="#" class="ui label"><span class="p-pro-tag">标签12345678</span></a>
+                                    <a href="#" class="ui label"><span class="p-pro-tag">标签123456789</span></a>
+                                    <a href="#" class="ui label"><span class="p-pro-tag">标签1234567890</span></a>
+                                </div>
+                            </div>
+                            <!-- 分割线 -->
+                            <div class="ui divider"></div>
+                            <!-- 相关数据 -->
+                            <div class="ui container">
+                                <div class="ui bottom aligned grid">
+                                    <!-- 项目标签数 -->
+                                    <div
+                                        class="four wide tablet two wide computer center aligned column p-pro-statistic">
+                                        <a href="#">
+                                            <i class="ui large teal tag icon"></i><br>
+                                            <span class="m-normal p-pro-tag_count">1222</span>
+                                        </a>
+                                    </div>
+                                    <!-- 项目关注人数 -->
+                                    <div
+                                        class="four wide tablet two wide computer center aligned column p-pro-statistic">
+                                        <a href="#">
+                                            <i class="ui large teal eye icon"></i><br>
+                                            <span class="m-normal p-pro-watch_count">12</span>
+                                        </a>
+                                    </div>
+                                    <!-- 项目收藏人数 -->
+                                    <div
+                                        class="four wide tablet two wide computer center aligned column p-pro-statistic">
+                                        <a href="#">
+                                            <i class="ui large teal star icon"></i><br>
+                                            <span class="m-normal p-pro-star_count">12</span>
+                                        </a>
+                                    </div>
+                                    <!-- 项目评论人数 -->
+                                    <div
+                                        class="four wide tablet two wide computer center aligned column p-pro-statistic">
+                                        <a href="./project">
+                                            <i class="ui large teal comment icon"></i><br>
+                                            <span class="m-normal p-pro-comment_count">12222</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 这是单个项目 -->
+                <div class="ui padded vertical segment p-content-pro">
+                    <div class="ui stackable grid">
+                        <!-- 左侧图片 -->
+                        <div class="six wide column p-pro-img">
+                            <a href="../project" class="ui rounded bordered image">
+                                <img src="img/首页背景.png" alt="">
+                            </a>
+                        </div>
+                        <!-- 右侧内容 -->
+                        <div class="ui stretched ten wide left aligned column grid">
+                            <!-- 顶部信息 -->
+                            <div class="ui grid">
+                                <div class="bottom aligned column">
+                                    <!-- 项目名字 -->
+                                    <a href="./project">
+                                        <div class="ui m-normal m-text-big p-pro-name">
+                                            A Project
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- 分割线 -->
+                            <div class="ui divider"></div>
+                            <!-- 标签区 -->
+                            <div class="ui container">
+                                <div class="ui mini teal labels p-pro-tag_list">
+                                    <a href="#" class="ui label"><span class="p-pro-tag">标签</span></a>
+                                    <a href="#" class="ui label"><span class="p-pro-tag">标签1</span></a>
+                                    <a href="#" class="ui label"><span class="p-pro-tag">标签12</span></a>
+                                    <a href="#" class="ui label"><span class="p-pro-tag">标签123</span></a>
+                                    <a href="#" class="ui label"><span class="p-pro-tag">标签1234</span></a>
+                                    <a href="#" class="ui label"><span class="p-pro-tag">标签12345</span></a>
+                                    <a href="#" class="ui label"><span class="p-pro-tag">标签123456</span></a>
+                                    <a href="#" class="ui label"><span class="p-pro-tag">标签1234567</span></a>
+                                    <a href="#" class="ui label"><span class="p-pro-tag">标签12345678</span></a>
+                                    <a href="#" class="ui label"><span class="p-pro-tag">标签123456789</span></a>
+                                    <a href="#" class="ui label"><span class="p-pro-tag">标签1234567890</span></a>
+                                </div>
+                            </div>
+                            <!-- 分割线 -->
+                            <div class="ui divider"></div>
+                            <!-- 相关数据 -->
+                            <div class="ui container">
+                                <div class="ui bottom aligned grid">
+                                    <!-- 项目标签数 -->
+                                    <div
+                                        class="four wide tablet two wide computer center aligned column p-pro-statistic">
+                                        <a href="#">
+                                            <i class="ui large teal tag icon"></i><br>
+                                            <span class="m-normal p-pro-tag_count">1222</span>
+                                        </a>
+                                    </div>
+                                    <!-- 项目关注人数 -->
+                                    <div
+                                        class="four wide tablet two wide computer center aligned column p-pro-statistic">
+                                        <a href="#">
+                                            <i class="ui large teal eye icon"></i><br>
+                                            <span class="m-normal p-pro-watch_count">12</span>
+                                        </a>
+                                    </div>
+                                    <!-- 项目收藏人数 -->
+                                    <div
+                                        class="four wide tablet two wide computer center aligned column p-pro-statistic">
+                                        <a href="#">
+                                            <i class="ui large teal star icon"></i><br>
+                                            <span class="m-normal p-pro-star_count">12</span>
+                                        </a>
+                                    </div>
+                                    <!-- 项目评论人数 -->
+                                    <div
+                                        class="four wide tablet two wide computer center aligned column p-pro-statistic">
+                                        <a href="./project">
+                                            <i class="ui large teal comment icon"></i><br>
+                                            <span class="m-normal p-pro-comment_count">12222</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 这是单个项目 -->
+                <div class="ui padded vertical segment p-content-pro">
+                    <div class="ui stackable grid">
+                        <!-- 左侧图片 -->
+                        <div class="six wide column p-pro-img">
+                            <a href="../project" class="ui rounded bordered image">
+                                <img src="img/首页背景.png" alt="">
+                            </a>
+                        </div>
+                        <!-- 右侧内容 -->
+                        <div class="ui stretched ten wide left aligned column grid">
+                            <!-- 顶部信息 -->
+                            <div class="ui grid">
+                                <div class="bottom aligned column">
+                                    <!-- 项目名字 -->
+                                    <a href="./project">
+                                        <div class="ui m-normal m-text-big p-pro-name">
+                                            A Project
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- 分割线 -->
+                            <div class="ui divider"></div>
+                            <!-- 标签区 -->
+                            <div class="ui container">
+                                <div class="ui mini teal labels p-pro-tag_list">
+                                    <a href="#" class="ui label"><span class="p-pro-tag">标签</span></a>
+                                    <a href="#" class="ui label"><span class="p-pro-tag">标签1</span></a>
+                                    <a href="#" class="ui label"><span class="p-pro-tag">标签12</span></a>
+                                    <a href="#" class="ui label"><span class="p-pro-tag">标签123</span></a>
+                                    <a href="#" class="ui label"><span class="p-pro-tag">标签1234</span></a>
+                                    <a href="#" class="ui label"><span class="p-pro-tag">标签12345</span></a>
+                                    <a href="#" class="ui label"><span class="p-pro-tag">标签123456</span></a>
+                                    <a href="#" class="ui label"><span class="p-pro-tag">标签1234567</span></a>
+                                    <a href="#" class="ui label"><span class="p-pro-tag">标签12345678</span></a>
+                                    <a href="#" class="ui label"><span class="p-pro-tag">标签123456789</span></a>
+                                    <a href="#" class="ui label"><span class="p-pro-tag">标签1234567890</span></a>
+                                </div>
+                            </div>
+                            <!-- 分割线 -->
+                            <div class="ui divider"></div>
+                            <!-- 相关数据 -->
+                            <div class="ui container">
+                                <div class="ui bottom aligned grid">
+                                    <!-- 项目标签数 -->
+                                    <div
+                                        class="four wide tablet two wide computer center aligned column p-pro-statistic">
+                                        <a href="#">
+                                            <i class="ui large teal tag icon"></i><br>
+                                            <span class="m-normal p-pro-tag_count">1222</span>
+                                        </a>
+                                    </div>
+                                    <!-- 项目关注人数 -->
+                                    <div
+                                        class="four wide tablet two wide computer center aligned column p-pro-statistic">
+                                        <a href="#">
+                                            <i class="ui large teal eye icon"></i><br>
+                                            <span class="m-normal p-pro-watch_count">12</span>
+                                        </a>
+                                    </div>
+                                    <!-- 项目收藏人数 -->
+                                    <div
+                                        class="four wide tablet two wide computer center aligned column p-pro-statistic">
+                                        <a href="#">
+                                            <i class="ui large teal star icon"></i><br>
+                                            <span class="m-normal p-pro-star_count">12</span>
+                                        </a>
+                                    </div>
+                                    <!-- 项目评论人数 -->
+                                    <div
+                                        class="four wide tablet two wide computer center aligned column p-pro-statistic">
+                                        <a href="./project">
+                                            <i class="ui large teal comment icon"></i><br>
+                                            <span class="m-normal p-pro-comment_count">12222</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 这是右边 -->
+        <div class="ui right floated raised teal segment container m-height-big m-top-margin-mini m-mobile-hidden"
+            style="width: 33%">
+            <!-- 这是内容区顶部 -->
+            <div class="ui teal basic message" id="p-content-msg">
+                <div class="header">
+                    Title
+                </div>
+            </div>
+        </div>
+        <div class="ui m-clear-both"></div>
+    </div>
+
+
+    <!-- 这是footer部分 -->
+    <div class="ui inverted basic segment m-padding m-top-margin-big">
+        <!-- 容器 -->
+        <div class="ui container">
+            <!-- 网格布局 -->
+            <div class="ui inverted three column divided centered relaxed grid">
+                <!-- 第一列 -->
+                <div class="five wide center aligned column">
+                    <div class="ui m-text-big">
+                        Look me
+                    </div>
+                </div>
+                <!-- 第二列 -->
+                <div class="five wide center aligned column">
+                    <div class="ui m-text-big">
+                        This is
+                    </div>
+                </div>
+                <!-- 第三列 -->
+                <div class="five wide center aligned column">
+                    <div class="ui m-text-big">
+                        Void page
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/semantic.min.js"></script>
+    <script src="js/page.js"></script>
+    <script>
+        // 用户个人空间搜索，把东西放在user_serch_content里，然后搜索的时候就会从中联想了
+        // 为什么这里会自动展开，难受
+        var user_serch_content = [{
+                title: "th01"
+            },
+            {
+                title: "th02"
+            },
+            {
+                title: "no.03"
+            },
+            {
+                title: "no.04"
+            },
+        ];
+        $(".p-user-serch").search({
+            source: user_serch_content,
+        });
+    </script>
+</body>
+
+</html>

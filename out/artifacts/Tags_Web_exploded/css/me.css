@@ -1,0 +1,152 @@
+/* 
+    请：不要按照页面分css，
+    请把每一块组件的css文件单独写好，
+    然后统一放在me.css文件中，并且写好注释，
+    以此达到像semanticUI一样的效果，只要填入类名就可以改变样式；
+    并且建议类名都以m(me)-开头，类似m-button,m-search-input之类的名字，便于区分
+*/
+
+
+/* index的css */
+
+
+/* index整体居中 */
+
+.m-index-main {
+    width: 800px;
+    height: 600px;
+    margin: 0px auto;
+}
+
+
+/* index背景图片 */
+
+.m-index-bgi {
+    background-image: url(../img/首页背景.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+
+/* index logo设计 */
+
+#m-index-top-logo {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    margin: 90px auto 60px auto;
+    border: #000;
+    border-radius: 150px;
+    background-color: rgb(98, 198, 223);
+    color: #fff;
+    line-height: 200px;
+    text-align: center;
+}
+
+
+/* index logo文本居中 */
+
+#m-index-top-logo-title {
+    line-height: 200px;
+    font-size: 60px;
+}
+
+
+/* index按钮居中 */
+
+.m-index-button-all {
+    width: 110px;
+    margin: 0 auto;
+}
+
+
+/* index按钮间隔 */
+
+.m-index-button {
+    margin-top: 20px;
+}
+
+
+/* index文本设置 */
+
+.m-index-span {
+    margin: 0 auto !important;
+}
+
+
+/* 登录界面的css */
+
+
+/* 背景图片 */
+
+.m-login-bgi {
+    background-image: url(../img/首页背景.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 600px;
+}
+
+
+/* 主体 */
+
+.m-login-main {
+    width: 800px;
+    margin: 100px auto;
+    padding-top: 50px;
+}
+
+
+/* 表单样式修改 */
+
+.m-login-form {
+    width: 800px;
+    height: 400px;
+}
+
+
+/* 文本样式 */
+
+.m-login-span {
+    line-height: 40px;
+    font-weight: bold;
+}
+
+
+/* 输入框样式 */
+
+.m-login-input {
+    width: 200px !important;
+}
+
+
+/* 注册按钮样式 */
+
+.m-login-button {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.m-login-button:hover {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+
+/* 注册界面的css */
+
+
+/* 协议标签转为行内标签 */
+
+label {
+    display: inline-block !important;
+}
+
+
+/* 提示字颜色 */
+
+.m-register-i {
+    color: red;
+}
+
+
+/*  */

@@ -1,0 +1,53 @@
+/* 一些基础设置 */
+html,
+body {
+    height: 100% !important;
+}
+
+/* 网页背景色 */
+body {
+    background-color: #f6f6f6;
+}
+
+/* 媒体查询手机端 */
+@media screen and (max-width: 768px) {
+
+    /* 手机端隐藏 */
+    .m-mobile-hidden {
+        display: none !important;
+    }
+
+    /* 手机端显示 */
+    .m-mobile-show {
+        display: block !important;
+    }
+
+    /* 手机端真全屏 */
+    .m-mobile-full {
+        width: 100% !important;
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+    }
+
+    /* 容器变大 */
+    .ui.container.m-mobile-full {
+        width: 100% !important;
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+    }
+
+    /* 背景图片 */
+    .m-bg-img {
+        background-position: 0 0 !important;
+        background-size: 100% 100% !important;
+        background-repeat: no-repeat !important;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    /* 手电脑端隐藏 */
+    .m-computer-hidden {
+        display: none !important;
+    }
+}
